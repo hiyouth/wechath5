@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width ,initial-scale=1" />
+    <title>轰炸设计师</title>
+    <link href="../css/home.css" rel="stylesheet/less" />
+    <script src="../js/jquery-1.8.2.min.js"></script>
+    <script src="../js/angular.min.js"></script>
+    <script src="../js/less-1.3.3.min.js"></script>
+    <script src="../js/prefixfree.min.js"></script>
+    <script src="../js/home.js"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="contentWrapper wrapperItem">
+            <div class="header">
+                <div class="gameTitle"></div>
+            </div>
+            <div class="btnsContents">
+                <div class="btns">
+                    <div class="startGame btnsItem"></div>
+                    <div class="showRecord btnsItem"></div>
+                </div>
+            </div>
+            <div class="footer"></div>
+            <div class="gameNotice">
+                <p>在30秒之内，</p>
+                <p>答对题目累计积分。</p>
+                <p>连击翻倍，答对加分，答错不扣分</p>
+                <p>题目无上限,</p>
+                <p>比比你的反应力吧！</p>
+            </div>
+            <div class="gameRecords" ng-app="myApp">
+                <div class="closeGameRecords btnsItem"></div>
+                <div class="gameRecordsContent">
+                    <table ng-controller="gameRecordsController">
+                        <tr ng-repeat="item in items">
+                            <td>{{item.date}}</td>
+                            <td>{{item.scores}}</td>
+                            <td>{{item.name}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="gameContentWrapper wrapperItem">
+            <div class="gameContentHeader"><div class="questionNum"></div></div>
+            <div class="gameContentPeople"></div>
+            <div class="gameContentTime"><span></span><label class="timeDetailInfo"></label></div>
+            <div class="gameContentQuestion"><p>在ps中，ctrl+v是复制的快捷键么</p></div>
+            <div class="doubleHitInfo"><p>&nbsp;×<span class="doubleHitNums"></span>&nbsp;</p></div>
+            <div class="wrongAnsweInfo"></div>
+            <div class="gameContentBtns">
+                    <div class="btnYes btnsItem"></div>
+                    <div class="btnNo btnsItem"></div>
+            </div>
+        </div>
+
+        <div class="gameOverWrapper wrapperItem">
+            <div class="gameResultPanel">
+                <div class="scoresWrapper">
+                    <div class="scoresLevel"></div>
+                    <div class="scroresBg"><p>本局累计积分</p><p><span id="totalScores"">0</span>分</p></div>
+                    <div class="scroresDescription">
+                        <p>你已超过<span id="defeatPeopleCounts">12313432</span>名设计师</p>
+                        <p>获得&nbsp;&nbsp;<span id="yourHonor">神级设计师</span>&nbsp;&nbsp;称号！！</p>
+                    </div>
+                    <div class="gameResultBtns">
+                        <div class="shareToFriends btnsItem"></div>
+                        <div class="oneMoreTime btnsItem"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gameRankingListPanel"></div>
+            <div class="gameOverFooter"><a href="http://hisihi.com" target="_blank"></a></div>
+        </div>
+
+    </div>
+</body>
+</html>

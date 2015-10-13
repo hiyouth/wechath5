@@ -1,0 +1,6 @@
+#/system/*   #忽略根目录system下所有文件
+#/application/config/*
+#/admin/application/config/*
+
+/Application/Runtime/*
+/.idea/*
